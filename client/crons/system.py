@@ -80,7 +80,7 @@ def run():
         "component": "cpu",
         "hw_id": None,
         "utilisation": psutil.cpu_percent(),
-        "temperature": None,#get_average(temperatures['coretemp']),
+        "temperature": get_average(temperatures['coretemp']),
 #        "temperature": temperatures,
         "power_consumption": None,
     })
