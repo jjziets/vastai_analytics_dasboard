@@ -1,6 +1,6 @@
-FROM nvidia/driver:440.64.00-ubuntu16.04
+FROM nvidia/cuda:11.6.2-devel-ubuntu20.04
 
-MAINTAINER Leon
+MAINTAINER jjiets
 
 RUN apt update && apt install -y \
   build-essential \
