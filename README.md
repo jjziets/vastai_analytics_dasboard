@@ -25,7 +25,7 @@ sudo apt install containerd -y
 sudo apt install -y docker.io docker-compose
 sudo service docker start
 sudo git clone https://github.com/jjziets/vastai_analytics_dasboard.git
-cd vast.ai-tools/analytics/server
+cd vastai_analytics_dasboard/
 ```
 
 ### 2. Update mysql password in docker-compose.yml
