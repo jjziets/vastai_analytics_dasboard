@@ -83,7 +83,7 @@ sudo docker run \
 
 ### Server
 ```bash
-cd vast.ai-tools/analytics/server
+cd vastai_analytics_dasboard/server
 sudo git pull origin master
 sudo docker-compose down
 sudo docker volume rm server_db
