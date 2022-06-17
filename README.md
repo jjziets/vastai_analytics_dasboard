@@ -24,7 +24,7 @@ Open port 80 and 3306 on the VPS for TCP/IP trafic
 sudo apt install containerd -y
 sudo apt install -y docker.io docker-compose
 sudo service docker start
-sudo git clone https://github.com/jjziets/vast.ai-tools.git
+sudo git clone https://github.com/jjziets/vastai_analytics_dasboard.git
 cd vast.ai-tools/analytics/server
 ```
 
