@@ -1,0 +1,26 @@
+version: "3"
+services:
+    db:
+      container_name: vast-analytics-db
+      image: mysql:latest
+      ports:
+       - "3306:3306"
+      security_opt:
+       - seccomp:unconfined
+      environment:
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_DATABASE=vast
+      volumes:
+         - db:/var/lib/mysql
+         - ./config/db_init:/docker-entrypoint-initdb.d/:ro
+    grafana:
+      container_name: vast-analytics-dash
+      image: grafana/grafana:latest
+      ports:
+       - "80:3000"
+      volumes:
+         - grafana:/var/lib/grafana
+volumes:
+  db:
+  grafana:
+
