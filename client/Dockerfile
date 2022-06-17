@@ -2,6 +2,8 @@ FROM nvidia/cuda:11.6.2-devel-ubuntu20.04
 
 MAINTAINER jjiets
 
+ENV DEBIAN_FRONTEND=nonintercative
+
 RUN apt update && apt install -y \
   build-essential \
   software-properties-common \
