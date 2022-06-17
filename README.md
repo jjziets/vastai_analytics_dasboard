@@ -77,7 +77,7 @@ sudo docker run \
   jjziets/vast-dash-analytics:latest
 ```
 
-
+ 
 
 ## Update steps
 
