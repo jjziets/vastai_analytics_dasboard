@@ -23,7 +23,7 @@ def run():
         "reliability": machine.reliability2,
         "rentals_stored": 0 if machine.current_rentals_resident == None else machine.current_rentals_resident ,
         "rentals_on_demand": 0 if machine.current_rentals_running_on_demand  == None else machine.current_rentals_running_on_demand,
-        "rentals_bid":  0 if machine.current_rentals_running or  machine.current_rentals_running_on_demand == None else machine.current_rentals_running - machine.current_rentals_running_on_demand,
+         "rentals_bid":  0 if machine.current_rentals_running == None or machine.current_rentals_running_on_demand == None else machine.current_rentals_running - machine.current_rentals_running_on_demand,
         "earn_hour": 0 if machine.earn_hour  == None else machine.earn_hour ,
         "hostname": machine.hostname,
         "earn_day": 0 if machine.earn_day == None else  machine.earn_day
