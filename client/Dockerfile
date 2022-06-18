@@ -2,7 +2,7 @@ FROM nvidia/cuda:11.6.2-devel-ubuntu20.04
 
 MAINTAINER jjiets
 
-ENV DEBIAN_FRONTEND=nonintercative
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt install -y \
   build-essential \
@@ -20,7 +20,7 @@ ADD ./requirements.txt /var/lib/vastai_analytics
 RUN python3.8 -m pip install -r requirements.txt
 
 RUN apt install -y apt-transport-https ca-certificates
-RUN apt insall -y curl 
+RUN apt install -y curl 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 RUN apt-get update && apt-get install -y docker-ce
