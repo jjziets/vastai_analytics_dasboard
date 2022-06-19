@@ -25,10 +25,10 @@ def run():
 
     def get_CPUTemps():
         testCPUTemp = psutil.sensors_temperatures()
-        if testCPUTemp['coretemp'] != None :
+        if 'coretemp' in testCPUTemp :
             testCPUTemp = get_average(testCPUTemp['coretemp'])
             return testCPUTemp
-        if testCPUTemp['k10temp'] != None :
+        if 'k10temp' in testCPUTemp :
             testCPUTemp = (testCPUTemp.get('k10temp')[0][1])
             return testCPUTemp
         testCPUTemp = open("/sys/class/thermal/thermal_zone0/temp", 'r').readlines()
