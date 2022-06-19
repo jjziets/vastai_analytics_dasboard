@@ -15,7 +15,6 @@ def run():
     disk_usage = psutil.disk_io_counters(perdisk=False)
     #    network_usage = psutil.net_io_counters(pernic=True)["docker0"]
     network_usage = psutil.net_io_counters(pernic=True)
-    temperatures = psutil.sensors_temperatures()
     #    cputemp = 0 if open("/sys/class/thermal/thermal_zone0/temp",'r').readlines() == None else open("/sys/class/thermal/thermal_zone0/temp",'r').readlines()
     #    temperatures2 = float(cputemp[0])/1000
     networksum = 0
@@ -25,14 +24,18 @@ def run():
         return sum(items) / len(items)
 
     def get_CPUTemps():
-        testCPUTemp = (psutil.sensors_temperatures().get('k10temp')[0][1])
-        if testCPUTemp == None :
-           testCPUTemp = get_average(temperatures['coretemp'])
-        else: return testCPUTemp
-        if testCPUTemp == None :
-            CPUTemp = open("/sys/class/thermal/thermal_zone0/temp", 'r').readlines()
-        else: return testCPUTemp
-        if CPUTemp == None:
+        testCPUTemp = psutil.sensors_temperatures()
+        if testCPUTemp != None :
+            testCPUTemp = (testCPUTemp.get('k10temp')[0][1])
+            if testCPUTemp == None:
+                testCPUTemp = psutil.sensors_temperatures()
+                testCPUTemp = get_average(testCPUTemp['coretemp'])
+                if testCPUTemp != None:
+                    return testCPUTemp
+            else:
+                return testCPUTemp
+        testCPUTemp = open("/sys/class/thermal/thermal_zone0/temp", 'r').readlines()
+        if testCPUTemp == None:
            testCPUTemp = 0
         else: testCPUTemp = float(testCPUTemp[0]) / 1000
         return testCPUTemp
