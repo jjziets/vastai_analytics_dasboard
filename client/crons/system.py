@@ -25,20 +25,17 @@ def run():
 
     def get_CPUTemps():
         testCPUTemp = psutil.sensors_temperatures()
-        if testCPUTemp != None :
+        if testCPUTemp['coretemp'] != None :
+            testCPUTemp = get_average(testCPUTemp['coretemp'])
+            return testCPUTemp
+        if testCPUTemp['k10temp'] != None :
             testCPUTemp = (testCPUTemp.get('k10temp')[0][1])
-            if testCPUTemp == None:
-                testCPUTemp = psutil.sensors_temperatures()
-                testCPUTemp = get_average(testCPUTemp['coretemp'])
-                if testCPUTemp != None:
-                    return testCPUTemp
-            else:
-                return testCPUTemp
+            return testCPUTemp
         testCPUTemp = open("/sys/class/thermal/thermal_zone0/temp", 'r').readlines()
-        if testCPUTemp == None:
-           testCPUTemp = 0
-        else: testCPUTemp = float(testCPUTemp[0]) / 1000
-        return testCPUTemp
+        if testCPUTemp != None:
+            testCPUTemp = float(testCPUTemp[0]) / 1000
+            return testCPUTemp
+        return 0
 
     db.insert_hardware(_time, {
         "component": "ram",
