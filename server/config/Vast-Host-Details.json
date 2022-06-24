@@ -86,7 +86,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1656070000763,
+  "iteration": 1656099439883,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -2539,7 +2539,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": false,
-          "rawSql": "SELECT\n  time AS \"time\",\n  power_consumption AS \"GPU 4\"\nFROM hardware\nWHERE\n  $__unixEpochFilter(time) AND\n  component = 'gpu' AND\n  hw_id = 4 AND\n  machine_id = $machine_id\nORDER BY time",
+          "rawSql": "SELECT\n  time AS \"time\",\n  power_consumption AS \"GPU 3\"\nFROM hardware\nWHERE\n  $__unixEpochFilter(time) AND\n  component = 'gpu' AND\n  hw_id = 3 AND\n  machine_id = $machine_id\nORDER BY time",
           "refId": "D",
           "select": [
             [
@@ -2551,7 +2551,7 @@
               },
               {
                 "params": [
-                  "GPU 4"
+                  "GPU 3"
                 ],
                 "type": "alias"
               }
@@ -2582,7 +2582,7 @@
               "params": [
                 "hw_id",
                 "=",
-                "4"
+                "3"
               ],
               "type": "expression"
             },
@@ -3383,7 +3383,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3491,7 +3492,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -3575,7 +3577,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               }
             ]
           },
@@ -3811,6 +3814,6 @@
   "timezone": "",
   "title": "Vast-Host-Details",
   "uid": "SwHgmdcGk",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
