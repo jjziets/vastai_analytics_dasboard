@@ -20,6 +20,7 @@ services:
        - "80:3000"
       volumes:
          - grafana:/var/lib/grafana
+      restart: always
 volumes:
   db:
   grafana:
