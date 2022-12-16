@@ -1,6 +1,6 @@
 # Analytics dashboard
 
-UPDATE! Vast  rest API changed and braking this dashboard. 
+UPDATE! Vast  rest API changed and broke this dashboard. 
 
 This is an analytics dashboard for remotely monitoring system information as well as tracking earnings.
 
