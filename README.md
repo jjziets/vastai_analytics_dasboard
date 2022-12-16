@@ -1,5 +1,7 @@
 # Analytics dashboard
 
+UPDATE! Vast  rest API changed and braking this dashboard. 
+
 This is an analytics dashboard for remotely monitoring system information as well as tracking earnings.
 
 NOTE: This is still a WIP. Not everything displayed is working properly and it needs lots of improvements like log rotation etc.
