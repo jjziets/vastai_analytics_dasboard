@@ -59,6 +59,7 @@ class Machine(Encodable):
     current_rentals_resident: int = None
     current_rentals_on_demand: int = None
     reliability2: float = None
+    verification: str = None
     local: LocalStat = None
 
 class Log(Encodable):
