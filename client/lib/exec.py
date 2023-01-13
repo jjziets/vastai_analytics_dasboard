@@ -1,7 +1,7 @@
 import subprocess
 
 commands = {
-    "gpu_power": "nvidia-smi -i {0} --format=csv,noheader,nounits --query-gpu=power.draw -q",
+    "gpu_power": "nvidia-smi -i {0} --format=csv,noheader,nounits --query-gpu=power.draw",
     "syslog": 'cat /var/log/syslog | grep -iE "error|warning"'
 }
 
