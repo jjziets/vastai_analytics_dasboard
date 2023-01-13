@@ -28,8 +28,8 @@ class Database:
 
     def insert_machine(self, time, data):
         log("Inserting machine:", data)
-        query = "INSERT INTO machine (time, machine_id, account_credit, reliability, rentals_stored, rentals_on_demand, rentals_bid, earn_hour, hostname, earn_day ) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        values = (time, settings.VAST_MACHINE_ID, data['account_credit'], data['reliability'], data['rentals_stored'], data['rentals_on_demand'], data['rentals_bid'], data['earn_hour'], data['hostname'], data['earn_day'] )
+        query = "INSERT INTO machine (time, machine_id, account_credit, reliability, rentals_stored, rentals_on_demand, rentals_bid, earn_hour, hostname, earn_day, verification) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        values = (time, settings.VAST_MACHINE_ID, data['account_credit'], data['reliability'], data['rentals_stored'], data['rentals_on_demand'], data['rentals_bid'], data['earn_hour'], data['hostname'], data['earn_day'], data['verification'] )
         self.exec(query, values)
 
     def insert_instance(self, time, data):
