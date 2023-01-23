@@ -34,6 +34,7 @@ CREATE TABLE `vast`.`machine` (
   `earn_hour` float DEFAULT NULL,
   `hostname` varchar(45) DEFAULT NULL,
   `earn_day` float DEFAULT NULL,
+  `verification` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
