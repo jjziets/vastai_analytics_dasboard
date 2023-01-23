@@ -39,7 +39,8 @@ def run():
         "rentals_bid": 0 if machine.current_rentals_running == None or machine.current_rentals_running_on_demand == None else machine.current_rentals_running - machine.current_rentals_running_on_demand,
         "earn_hour": 0 if machine.earn_hour == None else machine.earn_hour,
         "hostname": machine.hostname,
-        "earn_day": 0 if machine.earn_day == None else machine.earn_day
+        "earn_day": 0 if machine.earn_day == None else machine.earn_day,
+        "verification": machine.verification
     })
 
     for key, instance in enumerate(machine.instances):
