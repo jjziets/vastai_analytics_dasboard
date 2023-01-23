@@ -11,7 +11,7 @@ Account Overview
 
 
 ![image](https://user-images.githubusercontent.com/19214485/143225265-8bd66f8b-f401-4a76-a8e5-bcb05cd3320b.png)
-Vast Rig Detial view
+Vast Rig Detail view
 
 ## Server setup
 
